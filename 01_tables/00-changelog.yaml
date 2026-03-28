@@ -15,3 +15,20 @@ databaseChangeLog:
       rollback:
         - sqlFile:
             path: 11_rollbacks/01_tables/01-create-customer-rollback.sql
+
+  - changeSet:
+      id: 02_create_libros
+      author: santiagogordoperez77@gmail.com
+      context: dev
+      labels: HU_03
+      comment: Creación de la tabla libros
+      changes:
+        - tagDatabase:
+            tag: v1.1.0
+        - sqlFile:
+            path: 01_tables/02-create-book.sql
+            endDelimiter: ";"
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: 11_rollbacks/01_tables/02-create-book-rollback.sql  
