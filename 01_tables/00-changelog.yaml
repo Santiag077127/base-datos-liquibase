@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: 01_create_clientes
+      author: santiagogordoperez77@gmail.com
+      context: dev
+      labels: HU_02
+      comment: Creación de la tabla clientes
+      changes:
+        - tagDatabase:
+            tag: v1.0.1
+        - sqlFile:
+            path: 01_tables/01-create-customer.sql
+            endDelimiter: ";"
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: 11_rollbacks/01_tables/01-create-customer-rollback.sql
