@@ -32,3 +32,20 @@ databaseChangeLog:
       rollback:
         - sqlFile:
             path: 11_rollbacks/01_tables/02-create-book-rollback.sql            
+
+  - changeSet:
+      id: 03_create_pedidos
+      author: santiagogordoperez77@gmail.com
+      context: dev
+      labels: HU_04
+      comment: Creación de la tabla pedidos
+      changes:
+        - tagDatabase:
+            tag: v1.2.0
+        - sqlFile:
+            path: 01_tables/03-create-pedidos.sql
+            endDelimiter: ";"
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: 11_rollbacks/01_tables/03-create-pedidos-rollback.sql     
